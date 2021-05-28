@@ -9,7 +9,9 @@ Keyphrase Extractor can be run as below:
     https://indiana-my.sharepoint.com/:f:/g/personal/hd10_iu_edu/Ep1hNQYehrlMkB734awOKhQBTv3qVVsW8iO8bMl4Vdg46Q?e=0oI0y4
 
 3, Run "stanford-corenlp-full-2018-02-27" with terminal:
+
     (1) cd stanford-corenlp-full-2018-02-27/
+    
     (2) java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -preload tokenize,ssplit,pos -status_port 9000 -port 9000 -timeout 15000 &
   
 4, Run python files by their indices (001 - 011).
