@@ -1,7 +1,12 @@
 # AttentionRank
 AttentionRank: Unsupervised keyphrase Extraction using Self and Cross Attentions
 
-Keyword or keyphrase extraction is to identify words or phrases presenting the main topics of a document. We proposes the AttentionRank to identify keyphrase from a document in an unsupervised manner. AttentionRank calculates self-attention and cross-attention using a pre-trained language model. The self-attention is designed to determine the importance of a candidate within the context of a sentence. The cross-attention is to identify the semantic relevance between a candidate and other sentences. 
+Download "stanford-corenlp-full-2018-02-27" and pretrained bert-base from below link:
+https://indiana-my.sharepoint.com/:f:/g/personal/hd10_iu_edu/Ep1hNQYehrlMkB734awOKhQBTv3qVVsW8iO8bMl4Vdg46Q?e=0oI0y4
 
-Download stanford-corenlp-full-2018-02-27 from below link
-https://indiana-my.sharepoint.com/:u:/g/personal/hd10_iu_edu/ES2S-UAtwnNEgIG2EechChkB-linCRFVWpb6hOCW_Oorkw?e=Uqsdgy
+Run "stanford-corenlp-full-2018-02-27" with terminal:
+  cd stanford-corenlp-full-2018-02-27/
+  java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -preload tokenize,ssplit,pos -status_port 9000 -port 9000 -timeout 15000 &
+  
+Run python files by their indices.
+
