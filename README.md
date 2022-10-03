@@ -1,4 +1,7 @@
 # AttentionRank
+
+*20221002:fixed a computing mistake in step 011.
+
 This is an implement of paper AttentionRank: Unsupervised keyphrase Extraction using Self and Cross Attentions
 
 Keyphrase Extractor can be run as below:
