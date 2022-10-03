@@ -101,9 +101,10 @@ for n, file in enumerate(files):
             cross_attn_dict[k] = v
 
     # norm cross attn dict
+    a0 = min(cross_attn_dict.values())
+    b0 = max(cross_attn_dict.values())
     for k, v in cross_attn_dict.items():
-        cross_attn_dict[k] = \
-            (v - min(cross_attn_dict.values())) / (max(cross_attn_dict.values()) - min(cross_attn_dict.values()))
+        cross_attn_dict[k] = (v-a0)/(b0-a0)
 
     # load accumulated self attn ranking
     accumulated_self_attn_dict_first = {}
@@ -130,11 +131,11 @@ for n, file in enumerate(files):
     # norm attn-candidate dict
     t = 8
     ranking_dict = {}
+    a1 = min(accumulated_self_attn_dict.values())
+    b1 = max(accumulated_self_attn_dict.values())
     for k, v in accumulated_self_attn_dict.items():
-
         if k in cross_attn_dict.keys() and k.split(' ')[0] not in stopwords:
-            accumulated_self_attn_dict[k] = \
-                (v - min(accumulated_self_attn_dict.values())) / (max(accumulated_self_attn_dict.values()) - min(accumulated_self_attn_dict.values()))
+            accumulated_self_attn_dict[k] = (v-a1)/(b1-a1)
             ranking_dict[k] = accumulated_self_attn_dict[k] * (t) / 10 + cross_attn_dict[k] * (10 - t) / 10
 
     f1_k = 0
