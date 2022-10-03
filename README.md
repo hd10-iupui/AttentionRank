@@ -2,6 +2,7 @@
 
 ***Update 20221002: Fixed a computing mistake in step 011. Line 103 and line 131, move out the calculations of min and max from the loop.
 
+
 This is an implement of paper AttentionRank: Unsupervised keyphrase Extraction using Self and Cross Attentions
 
 Keyphrase Extractor can be run as below:
