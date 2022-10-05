@@ -136,6 +136,8 @@ tokenizer = tokenization.FullTokenizer(vocab_file=os.path.join(bert_dir, "vocab.
 # stanford nlp
 ptagger = load_local_corenlp_pos_tagger()
 
+df_dict = {}
+
 for n, file in enumerate(files):
 
     random.seed(0)
@@ -177,6 +179,28 @@ for n, file in enumerate(files):
 
         if tokens:  # if line is not empty, add lines to [current doc tokens]
             current_doc_tokens.append(tokens)
+    
+    # get tf
+    tf_dict = {}
+    for item in candidates:
+        if item in tf_dict:
+            tf_dict[item] += 1
+        else:
+            tf_dict[item] = 1
+
+    w0 = csv.writer(open(save_path + file + '_candidate_tf.csv', "a"))
+    # get df
+    for k, v in sorted(tf_dict.items(), key=lambda item: item[1], reverse=True):
+        w0.writerow([k, v])
+        if k in df_dict:
+            df_dict[k] += 1
+        else:
+            df_dict[k] = 1
+    
     run_time = time.time()
     print(n, "th file", file, "running time", run_time - start_time)
+    
+w1 = csv.writer(open(save_path + project + '_candidate_df.csv', "a"))
+for k, v in sorted(df_dict.items(), key=lambda item:item[1], reverse=True):
+    w1.writerow([k, v])
 
