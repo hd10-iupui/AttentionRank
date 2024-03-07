@@ -1,6 +1,6 @@
 # AttentionRank
 
-***Update 20240307: Thanks to DavideZanutto for organizing the requirements.txt, it can be found in "Issues #6" or download using this link https://github.com/hd10-iupui/AttentionRank/files/14361917/requirements.txt
+***Update 20240307: Thanks to DavideZanutto (https://github.com/DavideZanutto) for organizing the requirements.txt, it can be found in "Issues #6" or download using this link https://github.com/hd10-iupui/AttentionRank/files/14361917/requirements.txt
 
 ***Update 20221025: Added a modified "modeling_tf2.py" to zip file "bert_update20221025" in case you are using tensorflow 2.
 
